@@ -1,6 +1,7 @@
 package ru.borisova;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.Resource;
 
 public class TestSpring {
 
@@ -11,7 +12,23 @@ public class TestSpring {
 
         System.out.println(testBeanObj.getName());
 
-        context.close();
+
+        Resource BeanMap = context.getResource("AdditionalParams");
+
+        BeanMap beanMapd = new BeanMap();
+
+
+
+
+
+
+      System.out.println(beanMapd.getMyMap(context.getResource("AdditionalParams")).containsKey(key));
+
+
+
+     // System.out.println(BeanMap.get('key')});
+
+     //   context.close();
 
     }
 
